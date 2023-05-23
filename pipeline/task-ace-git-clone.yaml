@@ -139,7 +139,12 @@ spec:
           value: $(workspaces.ssl-ca-directory.path)
       image: $(params.gitInitImage)
       name: clone
-      resources: {}
+      resources: 
+        requests:
+          memory: "1Gi"
+        limits:
+          memory: "2Gi"
+
       script: >
         #!/usr/bin/env sh
 
